@@ -1,0 +1,22 @@
+This is a git containing the code for the software design project for the FEH class at Ohio State in Autumn 2013. 
+
+The code is to be loaded onto a Proteus microcontroller with a Vishay TSSOP2240 IR receiver. The Proteus also has a ButtonBoard attached at one of the grids. The code must perform the following tasks:
+
+-Display a welcome message and wait for the middle button to be pressed.
+-Once the middle button is pressed, sample frequencies continuously.
+-Display the frequencies. 
+-When middle button is pressed again, stop sampling, display a closing message. 
+
+The code must have the following requirements:
+
+-1ms delay each time digital input pin connected to the IR receiver is read. 
+-1 of 5 frequencies will be displayed. The frequencies randomly cycle and are held for 5 seconds:
+	*25Hz
+	*40Hz
+	*65Hz
+	*80Hz
+	*110Hz
+-The display must not lag behind more than 1 frequency set.
+-Detection must occur with the sensor held no closer than 6 inches from the beacon. 
+-The transmitted frequencies are held to about +- 3%
+
