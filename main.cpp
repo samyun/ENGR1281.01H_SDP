@@ -16,7 +16,7 @@ class data{
 }
 
 //Define Proteus vars
-ButtonBoard buttons( FEHIO::Bank3 );
+DigitalInputPin button( FEHIO::P3_1 );
 DigitalInputPin pin( FEHIO::P0_0);
 
 int main(void)
@@ -32,7 +32,7 @@ int main(void)
 	//Wait until middle is pressed
 	while (!stop){
 		Sleep(100);														//Conserve power by delaying the check by 0.1 seconds.
-		if (buttons.MiddlePressed()){
+		if (button.Value()){
 			stop = 1;
 		}
 	}
@@ -50,7 +50,7 @@ int main(void)
 		data.showData();
 		
 		//exit loop if button is pressed
-		if (buttons.MiddlePressed()){
+		if (button.Value()){
 			stop = 1;
 		}
 	}
@@ -72,7 +72,7 @@ int data::calcData(raw[]){
 }
 
 //define showData function
-void data::showData{
+void data::showData(){
 	LCD.Clear();
 	LCD.WriteLine("Press middle button to stop collection");
 	LCD.Write(freq);
